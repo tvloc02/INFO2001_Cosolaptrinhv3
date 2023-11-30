@@ -60,5 +60,17 @@ int main() {
 
     } while (choice != 0);
 
+int n;
+    printf("So luong sinh vien: ");
+    scanf("%d", &n);
+    struct Students Students[n];
+	for (i=0; i<=1; i++){
+	printf("Sinh vien thu %d:\n", i + 1);
+	Students[i]=st();
+	}
+	for (i = 0; i <=1; i++) {
+	disPlayStudent(Students[i]);
+    }
+
     return 0;
 }
