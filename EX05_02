@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void NhapMang(int* arr, int size) {
+    printf("Nhap cac phan tu cua mang:\n");
+    int i;
+    for (i = 0; i < size; i++) {
+        printf("arr[%d]: ", i);
+        scanf("%d", arr + i);
+    }
+}
+void InMang(int* arr, int size) {
+    printf("Cac phan tu cua mang la:\n");
+    int i;
+    for (i = 0; i < size; i++) {
+        printf("%d ", *(arr + i));
+    }
+}
+int main() {
+    int size;
+    printf("Nhap kich thuoc cua mang: ");
+    scanf("%d", &size);
+
+    int* arr = (int*)malloc(size * sizeof(int));
+    if (arr == NULL) {
+        printf("Khong du bo nho!\n");
+        return 1;
+    }
+    NhapMang(arr, size);
+    InMang(arr, size);
+    
+    free(arr);
+    return 0;
+}
